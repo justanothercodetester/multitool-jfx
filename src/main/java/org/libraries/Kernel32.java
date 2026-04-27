@@ -1,4 +1,4 @@
-package org.functions;
+package org.libraries;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
