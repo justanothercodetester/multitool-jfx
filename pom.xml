@@ -33,25 +33,22 @@
             <artifactId>atlantafx-base</artifactId>
             <version>2.1.0</version>
         </dependency>
-
-        <!-- jna for running native dll files -->
-        <dependency>
-            <groupId>net.java.dev.jna</groupId>
-            <artifactId>jna</artifactId>
-            <version>5.18.1</version>
-        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+
+            <!-- JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>org.multitool.FakeMain</mainClass>
+                    <mainClass>org.multitool/org.multitool.FakeMain</mainClass>
                 </configuration>
             </plugin>
+
+            <!-- JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -64,6 +61,8 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!-- SHADE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -85,6 +84,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
