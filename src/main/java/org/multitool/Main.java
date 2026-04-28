@@ -25,6 +25,21 @@ public class Main extends Application {
 
         stage.setTitle("Multitool");
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setOnCloseRequest(e -> {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Are you sure you wish to exit multitool?");
+            alert.setTitle("Confirmation");
+            alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO);
+
+            Optional<ButtonType> result = alert.showAndWait();
+
+            e.consume();
+
+            if (result.isPresent() && result.get() == ButtonType.YES) {
+                stage.close();
+            }
+        });
         stage.show();
     }
 
