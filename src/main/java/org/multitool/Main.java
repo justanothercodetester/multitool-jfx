@@ -3,11 +3,14 @@ package org.multitool;
 import atlantafx.base.theme.PrimerDark;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Optional;
 
 public class Main extends Application {
 
